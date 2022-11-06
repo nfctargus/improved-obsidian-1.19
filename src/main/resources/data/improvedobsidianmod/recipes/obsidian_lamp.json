@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "G": {
+      "item": "minecraft:glowstone"
+    },
+    "O": {
+      "item": "improvedobsidianmod:block/obsidian_shard"
+    }
+  },
+  "pattern": [
+    " O ",
+    "OGO",
+    " O "
+  ],
+  "result": {
+    "item": "improvedobsidianmod:block/obsidian_lamp"
+  }
+}

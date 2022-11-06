@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "key": {
+        "X": {
+            "item": "improvedobsidianmod:refined_obsidian_ingot"
+        }
+    },
+    "pattern": [
+        "X X",
+        "XXX",
+        "XXX"
+    ],
+    "result": {
+        "item": "improvedobsidianmod:obsidian_chestplate"
+    }
+}

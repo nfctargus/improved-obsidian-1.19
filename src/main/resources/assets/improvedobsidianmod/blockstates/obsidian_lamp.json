@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "improvedobsidianmod:block/obsidian_lamp"
+    },
+    "lit=true": {
+      "model": "improvedobsidianmod:block/obsidian_lamp_on"
+    }
+  }
+}

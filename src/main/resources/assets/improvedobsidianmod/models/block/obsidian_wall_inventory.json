@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "improvedobsidianmod:block/obsidian_block"
+  }
+}
