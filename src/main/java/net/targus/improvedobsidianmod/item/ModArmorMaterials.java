@@ -11,7 +11,7 @@ import net.minecraft.util.Lazy;
 import net.targus.improvedobsidianmod.ImprovedObsidianMod;
 
 public enum ModArmorMaterials implements ArmorMaterial {
-    OBSIDIAN("obsidian", 38, new int[]{3, 6, 8, 3}, 15, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 3.5F, 0.15F, () -> {
+    OBSIDIAN("obsidian", 38, new int[]{4, 7, 9, 4}, 15, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 3.5F, 0.15F, () -> {
         return Ingredient.ofItems(new ItemConvertible[]{ModItems.OBSIDIAN_SHARD});
     });
 
@@ -57,7 +57,7 @@ public enum ModArmorMaterials implements ArmorMaterial {
     }
 
     public String getName() {
-        return ImprovedObsidianMod.MOD_ID + ":" + this.name;
+        return this.name;
     }
 
     public float getToughness() {

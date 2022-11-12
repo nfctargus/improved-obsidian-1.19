@@ -32,18 +32,18 @@ public class ModItems {
                     new FabricItemSettings().group(ModItemGroup.OBSIDIAN).maxCount(1).fireproof()));
 
     //Obsidian Armor
-    /*public static final Item OBSIDIAN_HELMET = registerItem("obsidian_helmet",
+    public static final Item OBSIDIAN_HELMET = registerItem("obsidian_helmet",
             new ArmorItem(ModArmorMaterials.OBSIDIAN, EquipmentSlot.HEAD,
-                    new FabricItemSettings()));*/
- /*   public static final Item OBSIDIAN_CHESTPLATE = registerItem("obsidian_chestplate",
+                    new FabricItemSettings().group(ModItemGroup.OBSIDIAN).maxCount(1).fireproof()));
+    public static final Item OBSIDIAN_CHESTPLATE = registerItem("obsidian_chestplate",
             new ArmorItem(ModArmorMaterials.OBSIDIAN, EquipmentSlot.CHEST,
-                    new FabricItemSettings()));
+                    new FabricItemSettings().group(ModItemGroup.OBSIDIAN).maxCount(1).fireproof()));
     public static final Item OBSIDIAN_LEGGINGS = registerItem("obsidian_leggings",
             new ArmorItem(ModArmorMaterials.OBSIDIAN, EquipmentSlot.LEGS,
-                    new FabricItemSettings()));
+                    new FabricItemSettings().group(ModItemGroup.OBSIDIAN).maxCount(1).fireproof()));
     public static final Item OBSIDIAN_BOOTS = registerItem("obsidian_boots",
             new ArmorItem(ModArmorMaterials.OBSIDIAN, EquipmentSlot.FEET,
-                    new FabricItemSettings()));*/
+                    new FabricItemSettings().group(ModItemGroup.OBSIDIAN).maxCount(1).fireproof()));
     public static void registerModItems() {
         ImprovedObsidianMod.LOGGER.debug("Registering Mod Items for " + ImprovedObsidianMod.MOD_ID);
     }
