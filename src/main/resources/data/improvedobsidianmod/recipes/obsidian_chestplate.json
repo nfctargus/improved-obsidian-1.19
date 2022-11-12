@@ -2,7 +2,7 @@
     "type": "minecraft:crafting_shaped",
     "key": {
         "X": {
-            "item": "improvedobsidianmod:refined_obsidian_ingot"
+            "item": "improvedobsidianmod:obsiderite_ingot"
         }
     },
     "pattern": [

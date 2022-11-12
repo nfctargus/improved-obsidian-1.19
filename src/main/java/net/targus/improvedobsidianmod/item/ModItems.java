@@ -12,9 +12,10 @@ public class ModItems {
 
     public static final Item OBSIDIAN_SHARD = registerItem("obsidian_shard",
             new Item(new FabricItemSettings().group(ModItemGroup.OBSIDIAN)));
-    public static final Item REFINED_OBSIDIAN_INGOT = registerItem("refined_obsidian_ingot",
+    public static final Item OBSIDERITE_INGOT = registerItem("obsiderite_ingot",
             new Item(new FabricItemSettings().group(ModItemGroup.OBSIDIAN)));
-
+    public static final Item OBSIDERITE_DUST = registerItem("obsiderite_dust",
+            new Item(new FabricItemSettings().group(ModItemGroup.OBSIDIAN))); //obsiderite_dust
     //Obsidian Tools
     public static final Item OBSIDIAN_PICKAXE = registerItem("obsidian_pickaxe",
             new PickaxeItem(ToolMaterials.DIAMOND,3,-2.8f,
@@ -35,7 +36,7 @@ public class ModItems {
     public static final Item OBSIDIAN_HELMET = registerItem("obsidian_helmet",
             new ArmorItem(ModArmorMaterials.OBSIDIAN, EquipmentSlot.HEAD,
                     new FabricItemSettings().group(ModItemGroup.OBSIDIAN).maxCount(1).fireproof()));
-    public static final Item OBSIDIAN_CHESTPLATE = registerItem("obsidian_chestplate",
+    public static final Item OBSIDERITE_CHESTPLATE = registerItem("obsiderite_chestplate",
             new ArmorItem(ModArmorMaterials.OBSIDIAN, EquipmentSlot.CHEST,
                     new FabricItemSettings().group(ModItemGroup.OBSIDIAN).maxCount(1).fireproof()));
     public static final Item OBSIDIAN_LEGGINGS = registerItem("obsidian_leggings",

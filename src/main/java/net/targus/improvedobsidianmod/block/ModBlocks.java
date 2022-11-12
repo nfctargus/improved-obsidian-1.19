@@ -3,17 +3,22 @@ package net.targus.improvedobsidianmod.block;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
-import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.targus.improvedobsidianmod.ImprovedObsidianMod;
+import net.targus.improvedobsidianmod.block.custom.ObsideriteInfusingStationBlock;
 import net.targus.improvedobsidianmod.item.ModItemGroup;
-import net.targus.improvedobsidianmod.item.custom.ObsidianLampBlock;
+import net.targus.improvedobsidianmod.block.custom.ObsidianLampBlock;
 
 public class ModBlocks {
+    //Obsidian Infusing Station
+
+    public static final Block OBSIDERITE_INFUSING_STATION = registerBlock("obsiderite_infusing_station",
+            new ObsideriteInfusingStationBlock(FabricBlockSettings.of(Material.STONE)
+                    .strength(4f).requiresTool().nonOpaque()), ModItemGroup.OBSIDIAN);
     public static final Block OBSIDIAN_BLOCK = registerBlock("obsidian_block",
             new Block(FabricBlockSettings.of(Material.STONE).strength(10f).requiresTool()), ModItemGroup.OBSIDIAN);
     public static final Block REFINED_OBSIDIAN = registerBlock("refined_obsidian",

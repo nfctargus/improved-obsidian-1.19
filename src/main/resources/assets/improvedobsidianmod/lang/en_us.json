@@ -1,19 +1,21 @@
 {
   "item.improvedobsidianmod.obsidian_shard": "Obsidian Shard",
-  "item.improvedobsidianmod.refined_obsidian_ingot": "Refined Obsidian Ingot",
+  "item.improvedobsidianmod.obsiderite_ingot": "Obsiderite Ingot",
+  "item.improvedobsidianmod.obsiderite_dust": "Obsiderite Dust",
 
   "item.improvedobsidianmod.obsidian_pickaxe": "Obsidian Pickaxe",
   "item.improvedobsidianmod.obsidian_axe": "Obsidian Axe",
   "item.improvedobsidianmod.obsidian_shovel": "Obsidian Shovel",
   "item.improvedobsidianmod.obsidian_sword": "Obsidian Sword",
 
-  "item.improvedobsidianmod.obsidian_helmet": "Obsidian Helmet",
-  "item.improvedobsidianmod.obsidian_chestplate": "Obsidian Chestplate",
-  "item.improvedobsidianmod.obsidian_leggings": "Obsidian Leggings",
-  "item.improvedobsidianmod.obsidian_boots": "Obsidian Boots",
+  "item.improvedobsidianmod.obsidian_helmet": "Obsiderite Helmet",
+  "item.improvedobsidianmod.obsiderite_chestplate": "Obsiderite Chestplate",
+  "item.improvedobsidianmod.obsidian_leggings": "Obsiderite Leggings",
+  "item.improvedobsidianmod.obsidian_boots": "Obsiderite Boots",
 
   "itemGroup.improvedobsidianmod.obsidian": "Obsidian Mod",
 
+  "block.improvedobsidianmod.obsiderite_infusing_station": "Obsiderite Infusing Station",
   "block.improvedobsidianmod.obsidian_block": "Block of Obsidian",
   "block.improvedobsidianmod.refined_obsidian": "Refined Obsidian",
   "block.improvedobsidianmod.obsidian_stairs": "Obsidian Stairs",

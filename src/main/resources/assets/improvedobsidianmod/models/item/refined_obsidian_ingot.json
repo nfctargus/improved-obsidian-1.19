@@ -1,6 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "improvedobsidianmod:item/refined_obsidian_ingot"
-  }
-}

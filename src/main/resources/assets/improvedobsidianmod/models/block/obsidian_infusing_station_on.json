@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/orientable",
+  "textures": {
+    "front": "improvedobsidianmod:block/obsidian_infusing_station_front_on",
+    "side": "improvedobsidianmod:block/obsidian_infusing_station_side",
+    "top": "improvedobsidianmod:block/obsidian_infusing_station_top"
+  }
+}
