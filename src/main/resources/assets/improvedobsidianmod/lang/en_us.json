@@ -21,5 +21,8 @@
   "block.improvedobsidianmod.obsidian_stairs": "Obsidian Stairs",
   "block.improvedobsidianmod.obsidian_slab": "Obsidian Slab",
   "block.improvedobsidianmod.obsidian_wall": "Obsidian Wall",
-  "block.improvedobsidianmod.obsidian_lamp": "Obsidian Lamp"
+  "block.improvedobsidianmod.obsidian_lamp": "Obsidian Lamp",
+
+  "key.category.improvedobsidianmod.tutorial": "Tutorial mod Keys",
+  "key.improvedobsidianmod.drink_water": "Drink Water Key"
 }

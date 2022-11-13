@@ -7,6 +7,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.targus.improvedobsidianmod.ImprovedObsidianMod;
 import net.targus.improvedobsidianmod.block.ModBlocks;
+import team.reborn.energy.api.EnergyStorage;
 
 public class ModBlockEntities {
     public static BlockEntityType<ObsideriteInfusingBlockEntity> OBSIDERITE_INFUSING_STATION;
@@ -16,5 +17,7 @@ public class ModBlockEntities {
                 new Identifier(ImprovedObsidianMod.MOD_ID, "obsiderite_infusing_station"),
                 FabricBlockEntityTypeBuilder.create(ObsideriteInfusingBlockEntity::new,
                         ModBlocks.OBSIDERITE_INFUSING_STATION).build(null));
+
+        EnergyStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> blockEntity.energyStorage,OBSIDERITE_INFUSING_STATION);
     }
 }

@@ -1,10 +1,18 @@
 package net.targus.improvedobsidianmod.screen;
 
+import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerType;
 import net.minecraft.screen.ScreenHandlerType;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
+import net.targus.improvedobsidianmod.ImprovedObsidianMod;
+
 
 public class ModScreenHandlers {
-    public static ScreenHandlerType<ObsideriteInfusingScreenHandler> OBSIDIAN_INFUSING_SCREEN_HANDLER;
+    public static ScreenHandlerType<ObsideriteInfusingScreenHandler> OBSIDERITE_INFUSING_SCREEN_HANDLER =
+            new ExtendedScreenHandlerType<>(ObsideriteInfusingScreenHandler::new);
+
     public static void registerAllScreenHandlers() {
-        OBSIDIAN_INFUSING_SCREEN_HANDLER = new ScreenHandlerType<>(ObsideriteInfusingScreenHandler::new);
+        Registry.register(Registry.SCREEN_HANDLER, new Identifier(ImprovedObsidianMod.MOD_ID, "obsiderite_infusing"),
+                OBSIDERITE_INFUSING_SCREEN_HANDLER);
     }
 }

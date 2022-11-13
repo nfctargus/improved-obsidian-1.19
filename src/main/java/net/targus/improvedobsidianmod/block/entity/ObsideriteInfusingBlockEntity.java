@@ -1,5 +1,10 @@
 package net.targus.improvedobsidianmod.block.entity;
 
+import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
+import net.fabricmc.fabric.api.networking.v1.PlayerLookup;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
+import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
+import net.fabricmc.fabric.api.transfer.v1.transaction.Transaction;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -10,20 +15,39 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.screen.NamedScreenHandlerFactory;
+import net.minecraft.network.PacketByteBuf;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
+import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.targus.improvedobsidianmod.item.ModItems;
+import net.targus.improvedobsidianmod.networking.ModMessages;
 import net.targus.improvedobsidianmod.screen.ObsideriteInfusingScreenHandler;
 import org.jetbrains.annotations.Nullable;
+import team.reborn.energy.api.base.SimpleEnergyStorage;
 
-public class ObsideriteInfusingBlockEntity extends BlockEntity implements NamedScreenHandlerFactory, ImplementedInventory {
+public class ObsideriteInfusingBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(3, ItemStack.EMPTY);
 
+    public final SimpleEnergyStorage energyStorage = new SimpleEnergyStorage(5000,32,32) {
+        @Override
+        protected void onFinalCommit() {
+            markDirty();
+            if(!world.isClient()) {
+                PacketByteBuf data = PacketByteBufs.create();
+                data.writeLong(amount);
+                data.writeBlockPos(getPos());
+
+                for(ServerPlayerEntity player : PlayerLookup.tracking((ServerWorld) world, getPos())) {
+                    ServerPlayNetworking.send(player, ModMessages.ENERGY_SYNC, data);
+                }
+            }
+        }
+    };
     protected final PropertyDelegate propertyDelegate;
     private int progress = 0;
     private int maxProgress = 72;
@@ -47,11 +71,11 @@ public class ObsideriteInfusingBlockEntity extends BlockEntity implements NamedS
             }
 
             public int size() {
-                return 2;
+                return 4;
             }
         };
     }
-
+    public void setEnergyLevel(long energyLevel) { this.energyStorage.amount = energyLevel; }
     @Override
     public DefaultedList<ItemStack> getItems() {
         return this.inventory;
@@ -67,12 +91,16 @@ public class ObsideriteInfusingBlockEntity extends BlockEntity implements NamedS
     public ScreenHandler createMenu(int syncId, PlayerInventory inv, PlayerEntity player) {
         return new ObsideriteInfusingScreenHandler(syncId, inv, this, this.propertyDelegate);
     }
-
+    @Override
+    public void writeScreenOpeningData(ServerPlayerEntity player, PacketByteBuf buf) {
+        buf.writeBlockPos(this.pos);
+    }
     @Override
     protected void writeNbt(NbtCompound nbt) {
         super.writeNbt(nbt);
         Inventories.writeNbt(nbt, inventory);
         nbt.putInt("obsiderite_infusing_station.progress", progress);
+        nbt.putLong("obsiderite_infusing_station.energy",energyStorage.amount);
     }
 
     @Override
@@ -80,6 +108,7 @@ public class ObsideriteInfusingBlockEntity extends BlockEntity implements NamedS
         Inventories.readNbt(nbt, inventory);
         super.readNbt(nbt);
         progress = nbt.getInt("obsiderite_infusing_station.progress");
+        energyStorage.amount = nbt.getLong("obsiderite_infusing_station.energy");
     }
 
     private void resetProgress() {
@@ -91,10 +120,20 @@ public class ObsideriteInfusingBlockEntity extends BlockEntity implements NamedS
             return;
         }
 
-        if(hasRecipe(entity)) {
+        if(hasEnergyItem(entity)) {
+            try(Transaction transaction = Transaction.openOuter()) {
+                entity.energyStorage.insert(32, transaction);
+                transaction.commit();
+                entity.setStack(0,new ItemStack(Items.BUCKET));
+            }
+        }
+
+        if(hasRecipe(entity) && hasEnoughEnergy(entity)) {
             entity.progress++;
+
             markDirty(world, blockPos, state);
             if(entity.progress >= entity.maxProgress) {
+                extractEnergy(entity);
                 craftItem(entity);
             }
         } else {
@@ -103,26 +142,32 @@ public class ObsideriteInfusingBlockEntity extends BlockEntity implements NamedS
         }
     }
 
+    // Energy
+    private static void extractEnergy(ObsideriteInfusingBlockEntity entity) {
+        try(Transaction transaction = Transaction.openOuter()) {
+            entity.energyStorage.extract(32, transaction);
+            transaction.commit();
+
+        }
+    }
+
+    private static boolean hasEnoughEnergy(ObsideriteInfusingBlockEntity entity) {
+        return entity.energyStorage.amount >= 32;
+    }
+
+    private static boolean hasEnergyItem(ObsideriteInfusingBlockEntity entity) {
+        return entity.getStack(0).getItem() == Items.LAVA_BUCKET;
+    }
+    // Energy End
+
     private static void craftItem(ObsideriteInfusingBlockEntity entity) {
         SimpleInventory inventory = new SimpleInventory(entity.size());
         for (int i = 0; i < entity.size(); i++) {
             inventory.setStack(i, entity.getStack(i));
         }
-        //Check if the correct crafting materials are in the slots
+
         if(hasRecipe(entity)) {
             entity.removeStack(1, 1);
-
-            // Check which slot the lava bucket is in and replace it with a regular bucket
-            if(entity.getStack(0).getItem() == Items.LAVA_BUCKET) {
-                entity.removeStack(0, 1);
-                entity.setStack(0, new ItemStack(Items.BUCKET,
-                        entity.getStack(0).getCount() + 1));
-            }
-            else {
-                entity.removeStack(1, 1);
-                entity.setStack(1, new ItemStack(Items.BUCKET,
-                        entity.getStack(1).getCount() + 1));
-            }
             //Create the crafted item in the desired slot
             entity.setStack(2, new ItemStack(ModItems.OBSIDERITE_INGOT,
                     entity.getStack(2).getCount() + 1));
@@ -138,9 +183,8 @@ public class ObsideriteInfusingBlockEntity extends BlockEntity implements NamedS
             inventory.setStack(i, entity.getStack(i));
         }
 
-
-        if(entity.getStack(0).getItem() == ModItems.OBSIDERITE_DUST && entity.getStack(1).getItem() == Items.LAVA_BUCKET
-        || entity.getStack(1).getItem() == ModItems.OBSIDERITE_DUST && entity.getStack(0).getItem() == Items.LAVA_BUCKET) {
+        //Check if we have the correct ingredient in the correct slot
+        if(entity.getStack(1).getItem() == ModItems.OBSIDERITE_DUST) {
             return canInsertAmountIntoOutputSlot(inventory) && canInsertItemIntoOutputSlot(inventory, ModItems.OBSIDERITE_INGOT);
         } else {
             return false;
@@ -155,4 +199,6 @@ public class ObsideriteInfusingBlockEntity extends BlockEntity implements NamedS
     private static boolean canInsertAmountIntoOutputSlot(SimpleInventory inventory) {
         return inventory.getStack(2).getMaxCount() > inventory.getStack(2).getCount();
     }
+
+
 }

@@ -1,9 +1,12 @@
 package net.targus.improvedobsidianmod;
 
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.targus.improvedobsidianmod.block.ModBlocks;
 import net.targus.improvedobsidianmod.block.entity.ModBlockEntities;
+import net.targus.improvedobsidianmod.event.PlayerTickHandler;
 import net.targus.improvedobsidianmod.item.ModItems;
+import net.targus.improvedobsidianmod.networking.ModMessages;
 import net.targus.improvedobsidianmod.screen.ModScreenHandlers;
 import net.targus.improvedobsidianmod.util.ModLootTableModifiers;
 import org.slf4j.Logger;
@@ -20,5 +23,8 @@ public class ImprovedObsidianMod implements ModInitializer {
 		ModLootTableModifiers.modifyLootTables();
 		ModBlockEntities.registerBlockEntities();
 		ModScreenHandlers.registerAllScreenHandlers();
+		ModMessages.registerC2SPackets();
+
+		//ServerTickEvents.START_SERVER_TICK.register(new PlayerTickHandler());
 	}
 }

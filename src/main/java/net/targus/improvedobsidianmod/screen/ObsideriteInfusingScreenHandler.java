@@ -1,32 +1,37 @@
 package net.targus.improvedobsidianmod.screen;
 
+import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.network.PacketByteBuf;
 import net.minecraft.screen.ArrayPropertyDelegate;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
+import net.targus.improvedobsidianmod.block.entity.ObsideriteInfusingBlockEntity;
 
 public class ObsideriteInfusingScreenHandler extends ScreenHandler {
     public final Inventory inventory;
     public final PropertyDelegate propertyDelegate;
-    public ObsideriteInfusingScreenHandler(int syncId, PlayerInventory inventory) {
-        // SimpleInventory must be the same size as supplied in ObsidianInfusingBlockEntity DefaultedLise variable
-        // ArrayPropertyDelegate must be the same size as supplied in the ObsidianInfusingBlockEntity propertyDelegate return size
-        this(syncId,inventory,new SimpleInventory(3), new ArrayPropertyDelegate(4));
+    public final ObsideriteInfusingBlockEntity blockEntity;
+
+    public ObsideriteInfusingScreenHandler(int syncId, PlayerInventory inventory, PacketByteBuf buf) {
+        // ArrayPropertyDelegate must be the same size as supplied in the ObsideriteInfusingBlockEntity propertyDelegate return size
+        this(syncId, inventory, inventory.player.getWorld().getBlockEntity(buf.readBlockPos()),
+                new ArrayPropertyDelegate(4));
     }
 
-    public ObsideriteInfusingScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory, PropertyDelegate delegate) {
-        super(ModScreenHandlers.OBSIDIAN_INFUSING_SCREEN_HANDLER, syncId);
-        checkSize(inventory,3);
-        this.inventory = inventory;
+    public ObsideriteInfusingScreenHandler(int syncId, PlayerInventory playerInventory, BlockEntity entity, PropertyDelegate delegate) {
+        super(ModScreenHandlers.OBSIDERITE_INFUSING_SCREEN_HANDLER, syncId);
+        checkSize(((Inventory) entity),3);
+        this.inventory = (Inventory) entity;
         inventory.onOpen(playerInventory.player);
         this.propertyDelegate = delegate;
-
-        this.addSlot(new Slot(inventory, 0, 37, 35));
+        this.blockEntity = (ObsideriteInfusingBlockEntity)entity;
+        this.addSlot(new Slot(inventory, 0, 17, 35));
         this.addSlot(new Slot(inventory, 1, 57, 35));
         this.addSlot(new Slot(inventory, 2, 116, 35));
 
@@ -41,7 +46,7 @@ public class ObsideriteInfusingScreenHandler extends ScreenHandler {
     public int getScaledProgress() {
         int progress = this.propertyDelegate.get(0);
         int maxProgress = this.propertyDelegate.get(1);  // Max Progress
-        int progressArrowSize = 22; // This is the width in pixels of your arrow
+        int progressArrowSize = 18; // This is the width in pixels of your arrow
 
         return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
     }
