@@ -17,33 +17,33 @@ public class ModItems {
     public static final Item OBSIDERITE_DUST = registerItem("obsiderite_dust",
             new Item(new FabricItemSettings().group(ModItemGroup.OBSIDIAN))); //obsiderite_dust
     //Obsidian Tools
-    public static final Item OBSIDIAN_PICKAXE = registerItem("obsidian_pickaxe",
+    public static final Item OBSIDERITE_PICKAXE = registerItem("obsiderite_pickaxe",
             new PickaxeItem(ToolMaterials.DIAMOND,3,-2.8f,
                     new FabricItemSettings().group(ModItemGroup.OBSIDIAN).maxCount(1).fireproof()));
 
-    public static final Item OBSIDIAN_SWORD = registerItem("obsidian_sword",
+    public static final Item OBSIDERITE_SWORD = registerItem("obsiderite_sword",
             new SwordItem(ToolMaterials.DIAMOND,5,-2.3f,
                     new FabricItemSettings().group(ModItemGroup.OBSIDIAN).maxCount(1).fireproof()));
 
-    public static final Item OBSIDIAN_AXE = registerItem("obsidian_axe",
+    public static final Item OBSIDERITE_AXE = registerItem("obsiderite_axe",
             new AxeItem(ToolMaterials.DIAMOND,6,-3f,
                     new FabricItemSettings().group(ModItemGroup.OBSIDIAN).maxCount(1).fireproof()));
-    public static final Item OBSIDIAN_SHOVEL = registerItem("obsidian_shovel",
+    public static final Item OBSIDERITE_SHOVEL = registerItem("obsiderite_shovel",
             new ShovelItem(ToolMaterials.DIAMOND,3,-3f,
                     new FabricItemSettings().group(ModItemGroup.OBSIDIAN).maxCount(1).fireproof()));
 
     //Obsidian Armor
-    public static final Item OBSIDIAN_HELMET = registerItem("obsidian_helmet",
-            new ArmorItem(ModArmorMaterials.OBSIDIAN, EquipmentSlot.HEAD,
+    public static final Item OBSIDERITE_HELMET = registerItem("obsiderite_helmet",
+            new ArmorItem(ModArmorMaterials.OBSIDERITE, EquipmentSlot.HEAD,
                     new FabricItemSettings().group(ModItemGroup.OBSIDIAN).maxCount(1).fireproof()));
     public static final Item OBSIDERITE_CHESTPLATE = registerItem("obsiderite_chestplate",
-            new ArmorItem(ModArmorMaterials.OBSIDIAN, EquipmentSlot.CHEST,
+            new ArmorItem(ModArmorMaterials.OBSIDERITE, EquipmentSlot.CHEST,
                     new FabricItemSettings().group(ModItemGroup.OBSIDIAN).maxCount(1).fireproof()));
-    public static final Item OBSIDIAN_LEGGINGS = registerItem("obsidian_leggings",
-            new ArmorItem(ModArmorMaterials.OBSIDIAN, EquipmentSlot.LEGS,
+    public static final Item OBSIDERITE_LEGGINGS = registerItem("obsiderite_leggings",
+            new ArmorItem(ModArmorMaterials.OBSIDERITE, EquipmentSlot.LEGS,
                     new FabricItemSettings().group(ModItemGroup.OBSIDIAN).maxCount(1).fireproof()));
-    public static final Item OBSIDIAN_BOOTS = registerItem("obsidian_boots",
-            new ArmorItem(ModArmorMaterials.OBSIDIAN, EquipmentSlot.FEET,
+    public static final Item OBSIDERITE_BOOTS = registerItem("obsiderite_boots",
+            new ArmorItem(ModArmorMaterials.OBSIDERITE, EquipmentSlot.FEET,
                     new FabricItemSettings().group(ModItemGroup.OBSIDIAN).maxCount(1).fireproof()));
     public static void registerModItems() {
         ImprovedObsidianMod.LOGGER.debug("Registering Mod Items for " + ImprovedObsidianMod.MOD_ID);

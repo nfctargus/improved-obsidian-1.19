@@ -1,0 +1,22 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "key": {
+        "O": {
+            "item": "minecraft:obsidian"
+        },
+        "N": {
+            "item": "minecraft:netherite_ingot"
+        },
+        "B": {
+            "item": "minecraft:blast_furnace"
+        }
+    },
+    "pattern": [
+        "NNN",
+        "NBN",
+        "OOO"
+    ],
+    "result": {
+        "item": "improvedobsidianmod:obsiderite_infusing_station"
+    }
+}

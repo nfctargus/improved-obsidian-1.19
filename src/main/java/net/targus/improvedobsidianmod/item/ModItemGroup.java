@@ -9,5 +9,5 @@ import net.targus.improvedobsidianmod.ImprovedObsidianMod;
 
 public class ModItemGroup {
     public static final ItemGroup OBSIDIAN = FabricItemGroupBuilder.build(new Identifier(ImprovedObsidianMod.MOD_ID,"obsidian"),
-            () -> new ItemStack(ModItems.OBSIDIAN_PICKAXE));
+            () -> new ItemStack(ModItems.OBSIDERITE_PICKAXE));
 }
