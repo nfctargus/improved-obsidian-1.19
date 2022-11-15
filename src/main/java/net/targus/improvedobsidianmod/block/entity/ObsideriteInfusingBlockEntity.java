@@ -5,7 +5,9 @@ import net.fabricmc.fabric.api.networking.v1.PlayerLookup;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.fabricmc.fabric.api.transfer.v1.transaction.Transaction;
+import net.minecraft.block.AbstractFurnaceBlock;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.entity.AbstractFurnaceBlockEntity;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
@@ -16,6 +18,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
+import net.minecraft.recipe.AbstractCookingRecipe;
+import net.minecraft.recipe.Recipe;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -23,7 +27,9 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
+import net.targus.improvedobsidianmod.block.custom.ObsideriteInfusingStationBlock;
 import net.targus.improvedobsidianmod.item.ModItems;
 import net.targus.improvedobsidianmod.networking.ModMessages;
 import net.targus.improvedobsidianmod.screen.ObsideriteInfusingScreenHandler;
@@ -101,6 +107,7 @@ public class ObsideriteInfusingBlockEntity extends BlockEntity implements Extend
         Inventories.writeNbt(nbt, inventory);
         nbt.putInt("obsiderite_infusing_station.progress", progress);
         nbt.putLong("obsiderite_infusing_station.energy",energyStorage.amount);
+
     }
 
     @Override
@@ -109,6 +116,7 @@ public class ObsideriteInfusingBlockEntity extends BlockEntity implements Extend
         super.readNbt(nbt);
         progress = nbt.getInt("obsiderite_infusing_station.progress");
         energyStorage.amount = nbt.getLong("obsiderite_infusing_station.energy");
+
     }
 
     private void resetProgress() {
@@ -120,9 +128,11 @@ public class ObsideriteInfusingBlockEntity extends BlockEntity implements Extend
             return;
         }
 
+        world.setBlockState(blockPos, (BlockState)state.with(ObsideriteInfusingStationBlock.LIT, entity.isBurning()), 2);
+
         if(hasEnergyItem(entity)) {
             try(Transaction transaction = Transaction.openOuter()) {
-                entity.energyStorage.insert(32, transaction);
+                entity.energyStorage.insert(64, transaction);
                 transaction.commit();
                 entity.setStack(0,new ItemStack(Items.BUCKET));
             }
@@ -140,6 +150,10 @@ public class ObsideriteInfusingBlockEntity extends BlockEntity implements Extend
             entity.resetProgress();
             markDirty(world, blockPos, state);
         }
+    }
+
+    private Boolean isBurning() {
+        return this.energyStorage.amount > 0;
     }
 
     // Energy

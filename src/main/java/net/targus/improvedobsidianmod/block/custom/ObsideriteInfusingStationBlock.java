@@ -8,6 +8,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.state.StateManager;
+import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.*;
@@ -22,6 +23,8 @@ import org.jetbrains.annotations.Nullable;
 
 public class ObsideriteInfusingStationBlock extends BlockWithEntity implements BlockEntityProvider {
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
+    //public static final BooleanProperty LIT = BooleanProperty.of("lit");
+    public static final BooleanProperty LIT = Properties.LIT;
 
     public ObsideriteInfusingStationBlock(Settings settings) {
         super(settings);
@@ -34,10 +37,12 @@ public class ObsideriteInfusingStationBlock extends BlockWithEntity implements B
         return SHAPE;
     }
 
+
+
     @Nullable
     @Override
     public BlockState getPlacementState(ItemPlacementContext ctx) {
-        return this.getDefaultState().with(FACING, ctx.getPlayerFacing().getOpposite());
+        return this.getDefaultState().with(FACING, ctx.getPlayerFacing().getOpposite()).with(LIT, false);
     }
 
     @Override
@@ -53,7 +58,10 @@ public class ObsideriteInfusingStationBlock extends BlockWithEntity implements B
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
         builder.add(FACING);
+        builder.add(LIT);
     }
+
+
 
 
     /* BLOCK ENTITY */
