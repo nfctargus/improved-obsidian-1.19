@@ -9,13 +9,23 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.targus.improvedobsidianmod.ImprovedObsidianMod;
-import net.targus.improvedobsidianmod.block.custom.ObsideriteInfusingStationBlock;
+import net.targus.improvedobsidianmod.block.custom.*;
 import net.targus.improvedobsidianmod.item.ModItemGroup;
-import net.targus.improvedobsidianmod.block.custom.ObsidianLampBlock;
 
 public class ModBlocks {
-    //Obsidian Infusing Station
 
+    //Obsiderite Chest ** WIP **
+    public static final Block OBSIDERITE_CHEST_BLOCK = registerBlock("obsiderite_chest",
+            new ObsideriteChestBlock(FabricBlockSettings.of(Material.STONE)
+                    .strength(4f).requiresTool().nonOpaque().strength(22.5F, 600.0F)), ModItemGroup.OBSIDIAN);
+
+    public static final Block OBSIDIAN_GLASS_BLOCK = registerBlock("obsidian_glass",
+            new ObsidianGlassBlock(FabricBlockSettings.of(Material.GLASS)
+                    .strength(22.5F,600.0F).nonOpaque()),ModItemGroup.OBSIDIAN);
+    public static final Block OBSIDIAN_GLASS_PANE_BLOCK = registerBlock("obsidian_glass_pane",
+            new PaneBlock(FabricBlockSettings.of(Material.GLASS)
+                    .strength(22.5F,600.0F).nonOpaque()),ModItemGroup.OBSIDIAN);
+    //Obsidian Infusing Station
     public static final Block OBSIDERITE_INFUSING_STATION = registerBlock("obsiderite_infusing_station",
             new ObsideriteInfusingStationBlock(FabricBlockSettings.of(Material.STONE)
                     .strength(4f).requiresTool().nonOpaque()), ModItemGroup.OBSIDIAN);
@@ -45,5 +55,7 @@ public class ModBlocks {
     }
     public static void registerModBlocks() {
         ImprovedObsidianMod.LOGGER.debug("Registering ModBlocks for "+ ImprovedObsidianMod.MOD_ID);
+
+
     }
 }

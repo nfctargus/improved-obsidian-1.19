@@ -16,13 +16,15 @@
   "itemGroup.improvedobsidianmod.obsidian": "Obsidian Mod",
 
   "block.improvedobsidianmod.obsiderite_infusing_station": "Obsiderite Infusing Station",
+  "block.improvedobsidianmod.obsiderite_chest": "Obsiderite Chest",
   "block.improvedobsidianmod.obsidian_block": "Block of Obsidian",
   "block.improvedobsidianmod.refined_obsidian": "Refined Obsidian",
+  "block.improvedobsidianmod.obsidian_glass": "Obsidian Glass",
+  "block.improvedobsidianmod.obsidian_glass_pane": "Obsidian Glass Pane",
   "block.improvedobsidianmod.obsidian_stairs": "Obsidian Stairs",
   "block.improvedobsidianmod.obsidian_slab": "Obsidian Slab",
   "block.improvedobsidianmod.obsidian_wall": "Obsidian Wall",
   "block.improvedobsidianmod.obsidian_lamp": "Obsidian Lamp",
 
-  "key.category.improvedobsidianmod.tutorial": "Tutorial mod Keys",
-  "key.improvedobsidianmod.drink_water": "Drink Water Key"
+  "container.improvedobsidianmod.obsiderite_chest": "Obsiderite Chest"
 }
