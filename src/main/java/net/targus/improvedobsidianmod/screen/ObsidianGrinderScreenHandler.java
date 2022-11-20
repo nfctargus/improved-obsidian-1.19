@@ -7,43 +7,51 @@ import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.screen.ArrayPropertyDelegate;
+import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
-import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.screen.slot.Slot;
-import org.jetbrains.annotations.Nullable;
+import net.targus.improvedobsidianmod.block.entity.ObsidianGrinderBlockEntity;
+import net.targus.improvedobsidianmod.screen.ModScreenHandlers;
 
-public class ObsideriteChestScreenHandler extends ScreenHandler {
-    private final Inventory inventory; // Chest inventory
-    private static final int INVENTORY_SIZE = 54; // 6 rows * 9 cols
+public class ObsidianGrinderScreenHandler extends ScreenHandler {
+    public final Inventory inventory;
+    public final PropertyDelegate propertyDelegate;
+    public final ObsidianGrinderBlockEntity blockEntity;
 
-    public ObsideriteChestScreenHandler(int syncId, PlayerInventory inventory, PacketByteBuf buf) {
-        this(syncId, inventory, inventory.player.getWorld().getBlockEntity(buf.readBlockPos()));
+    public ObsidianGrinderScreenHandler(int syncId, PlayerInventory inventory, PacketByteBuf buf) {
+        // ArrayPropertyDelegate must be the same size as supplied in the ObsidianGrinderBlockEntity propertyDelegate return size
+        this(syncId, inventory, inventory.player.getWorld().getBlockEntity(buf.readBlockPos()),
+                new ArrayPropertyDelegate(2));
     }
-    //public ObsideriteInfusingScreenHandler(int syncId, PlayerInventory playerInventory, BlockEntity entity)
-    public ObsideriteChestScreenHandler(int syncId, PlayerInventory playerInventory, BlockEntity entity) {
-        super(ModScreenHandlers.OBSIDERITE_CHEST_SCREEN_HANDLER, syncId);
-        this.inventory = (Inventory)entity;
-        checkSize(inventory, INVENTORY_SIZE);
+
+    public ObsidianGrinderScreenHandler(int syncId, PlayerInventory playerInventory, BlockEntity entity, PropertyDelegate delegate) {
+        super(ModScreenHandlers.OBSIDIAN_GRINDER_SCREEN_HANDLER, syncId);
+        checkSize(((Inventory) entity),3);
+        this.inventory = (Inventory) entity;
         inventory.onOpen(playerInventory.player);
+        this.propertyDelegate = delegate;
+        this.blockEntity = (ObsidianGrinderBlockEntity)entity;
+        this.addSlot(new Slot(inventory, 0, 50, 20));
+        this.addSlot(new Slot(inventory, 1, 50, 45));
+        this.addSlot(new Slot(inventory, 2, 109, 32));
 
 
-        // Creating Slots for GUI. A Slot is essentially a corresponding from inventory ItemStacks to the GUI position.
-        int i;
-        int j;
-
-        // Chest Inventory
-        for (i = 0; i < 6; i++) {
-            for (j = 0; j < 9; j++) {
-                this.addSlot(new Slot(inventory, i * 9 + j, 8 + j * 18, 18 + i * 18));
-            }
-        }
-
-        //Adding player inventory and hotbar
         addPlayerInventory(playerInventory);
         addPlayerHotbar(playerInventory);
+        addProperties(delegate);
+    }
+    public boolean isCrafting() {
+        return propertyDelegate.get(0) > 0;
     }
 
-    // Shift + Player Inv Slot
+    public int getScaledProgress() {
+        int progress = this.propertyDelegate.get(0);
+        int maxProgress = this.propertyDelegate.get(1);  // Max Progress
+        int progressArrowSize = 18; // This is the width in pixels of your arrow
+
+        return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
+    }
+
     @Override
     public ItemStack transferSlot(PlayerEntity player, int invSlot) {
         ItemStack newStack = ItemStack.EMPTY;
@@ -65,15 +73,14 @@ public class ObsideriteChestScreenHandler extends ScreenHandler {
                 slot.markDirty();
             }
         }
-
         return newStack;
     }
+
 
     @Override
     public boolean canUse(PlayerEntity player) {
         return this.inventory.canPlayerUse(player);
     }
-
     private void addPlayerInventory(PlayerInventory playerInventory) {
         for (int i = 0; i < 3; ++i) {
             for (int l = 0; l < 9; ++l) {

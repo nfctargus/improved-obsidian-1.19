@@ -2,7 +2,7 @@
   "type": "minecraft:stonecutting",
   "count": 4,
   "ingredient": {
-    "item": "minecraft:obsidian"
+    "item": "improvedobsidianmod:obsidian_block"
   },
   "result": "improvedobsidianmod:obsidian_stairs"
 }

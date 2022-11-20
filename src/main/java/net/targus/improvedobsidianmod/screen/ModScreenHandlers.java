@@ -10,15 +10,14 @@ import net.targus.improvedobsidianmod.ImprovedObsidianMod;
 public class ModScreenHandlers {
     public static ScreenHandlerType<ObsideriteInfusingScreenHandler> OBSIDERITE_INFUSING_SCREEN_HANDLER =
             new ExtendedScreenHandlerType<>(ObsideriteInfusingScreenHandler::new);
-
-    public static ScreenHandlerType<ObsideriteChestScreenHandler> OBSIDERITE_CHEST_SCREEN_HANDLER =
-            new ExtendedScreenHandlerType<>(ObsideriteChestScreenHandler::new);
+    public static ScreenHandlerType<ObsidianGrinderScreenHandler> OBSIDIAN_GRINDER_SCREEN_HANDLER =
+            new ExtendedScreenHandlerType<>(ObsidianGrinderScreenHandler::new);
 
     public static void registerAllScreenHandlers() {
         Registry.register(Registry.SCREEN_HANDLER, new Identifier(ImprovedObsidianMod.MOD_ID, "obsiderite_infusing"),
                 OBSIDERITE_INFUSING_SCREEN_HANDLER);
+        Registry.register(Registry.SCREEN_HANDLER, new Identifier(ImprovedObsidianMod.MOD_ID, "obsidian_grinder"),
+                OBSIDIAN_GRINDER_SCREEN_HANDLER);
 
-        Registry.register(Registry.SCREEN_HANDLER, new Identifier(ImprovedObsidianMod.MOD_ID, "obsiderite_chest"),
-                OBSIDERITE_CHEST_SCREEN_HANDLER);
     }
 }

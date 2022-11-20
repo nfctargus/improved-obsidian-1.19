@@ -5,15 +5,15 @@
             "item": "minecraft:stick"
         },
         "X": {
-            "item": "improvedobsidianmod:obsidian_ingot"
+            "item": "improvedobsidianmod:obsiderite_ingot"
         }
     },
     "pattern": [
-        " X ",
-        " X ",
+        "XX ",
+        " # ",
         " # "
     ],
     "result": {
-        "item": "improvedobsidianmod:obsiderite_sword"
+        "item": "improvedobsidianmod:obsiderite_hoe"
     }
 }

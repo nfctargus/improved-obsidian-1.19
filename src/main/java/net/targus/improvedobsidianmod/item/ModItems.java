@@ -7,6 +7,7 @@ import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.targus.improvedobsidianmod.ImprovedObsidianMod;
+import net.targus.improvedobsidianmod.item.custom.ObsideriteHoeItem;
 
 public class ModItems {
 
@@ -15,7 +16,9 @@ public class ModItems {
     public static final Item OBSIDERITE_INGOT = registerItem("obsiderite_ingot",
             new Item(new FabricItemSettings().group(ModItemGroup.OBSIDIAN)));
     public static final Item OBSIDERITE_DUST = registerItem("obsiderite_dust",
-            new Item(new FabricItemSettings().group(ModItemGroup.OBSIDIAN))); //obsiderite_dust
+            new Item(new FabricItemSettings().group(ModItemGroup.OBSIDIAN)));
+    public static final Item OBSIDIAN_DUST = registerItem("obsidian_dust",
+            new Item(new FabricItemSettings().group(ModItemGroup.OBSIDIAN)));
     //Obsidian Tools
     public static final Item OBSIDERITE_PICKAXE = registerItem("obsiderite_pickaxe",
             new PickaxeItem(ToolMaterials.DIAMOND,3,-2.8f,
@@ -23,6 +26,10 @@ public class ModItems {
 
     public static final Item OBSIDERITE_SWORD = registerItem("obsiderite_sword",
             new SwordItem(ToolMaterials.DIAMOND,5,-2.3f,
+                    new FabricItemSettings().group(ModItemGroup.OBSIDIAN).maxCount(1).fireproof()));
+
+    public static final Item OBSIDERITE_HOE = registerItem("obsiderite_hoe",
+            new ObsideriteHoeItem(ToolMaterials.DIAMOND,5,-2.3f,
                     new FabricItemSettings().group(ModItemGroup.OBSIDIAN).maxCount(1).fireproof()));
 
     public static final Item OBSIDERITE_AXE = registerItem("obsiderite_axe",

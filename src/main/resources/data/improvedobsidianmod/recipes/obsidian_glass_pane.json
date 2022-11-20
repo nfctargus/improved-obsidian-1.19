@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "key": {
+        "X": {
+            "item": "improvedobsidianmod:obsidian_glass"
+        }
+    },
+    "pattern": [
+        "   ",
+        "XXX",
+        "XXX"
+    ],
+    "result": {
+        "count": 16,
+        "item": "improvedobsidianmod:obsidian_glass_pane"
+    }
+}

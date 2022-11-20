@@ -1,0 +1,22 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "key": {
+        "D": {
+            "item": "minecraft:diamond"
+        },
+        "O": {
+            "item": "minecraft:obsidian"
+        },
+        "S": {
+            "item": "minecraft:stone"
+        }
+    },
+    "pattern": [
+        "SSS",
+        "ODO",
+        "OOO"
+    ],
+    "result": {
+        "item": "improvedobsidianmod:obsidian_grinder"
+    }
+}

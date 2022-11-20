@@ -24,7 +24,5 @@ public class ImprovedObsidianMod implements ModInitializer {
 		ModBlockEntities.registerBlockEntities();
 		ModScreenHandlers.registerAllScreenHandlers();
 		ModMessages.registerC2SPackets();
-
-		//ServerTickEvents.START_SERVER_TICK.register(new PlayerTickHandler());
 	}
 }
