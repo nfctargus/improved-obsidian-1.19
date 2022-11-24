@@ -1,7 +1,19 @@
 {
   "variants": {
-    "": {
+    "facing=east": {
+      "model": "improvedobsidianmod:block/obsiderite_chest",
+      "y": 90
+    },
+    "facing=north": {
       "model": "improvedobsidianmod:block/obsiderite_chest"
+    },
+    "facing=south": {
+      "model": "improvedobsidianmod:block/obsiderite_chest",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "improvedobsidianmod:block/obsiderite_chest",
+      "y": 270
     }
   }
 }

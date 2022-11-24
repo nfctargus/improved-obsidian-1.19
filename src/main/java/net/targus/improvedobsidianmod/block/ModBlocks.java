@@ -15,32 +15,25 @@ import net.targus.improvedobsidianmod.item.ModItemGroup;
 
 public class ModBlocks {
 
-
+/* --------------------- Decorative Blocks --------------------- */
     public static final Block OBSIDIAN_GLASS_BLOCK = registerBlock("obsidian_glass",
             new ObsidianGlassBlock(FabricBlockSettings.of(Material.GLASS)
                     .strength(22.5F,600.0F).sounds(BlockSoundGroup.GLASS).nonOpaque()),ModItemGroup.OBSIDIAN);
     public static final Block OBSIDIAN_GLASS_PANE_BLOCK = registerBlock("obsidian_glass_pane",
             new PaneBlock(FabricBlockSettings.of(Material.GLASS)
                     .strength(22.5F,600.0F).sounds(BlockSoundGroup.GLASS).nonOpaque()),ModItemGroup.OBSIDIAN);
-    //Obsidian Infusing Station
-    public static final Block OBSIDERITE_INFUSING_STATION = registerBlock("obsiderite_infusing_station",
-            new ObsideriteInfusingStationBlock(FabricBlockSettings.of(Material.STONE)
-                    .strength(22.5F,600.0F).requiresTool().nonOpaque()), ModItemGroup.OBSIDIAN);
-
-    public static final Block OBSIDIAN_VASE = registerBlock("obsidian_vase",
-            new ObsideriteInfusingStationBlock(FabricBlockSettings.of(Material.STONE)
-                    .strength(22.5F,600.0F).sounds(BlockSoundGroup.GLASS).nonOpaque()), ModItemGroup.OBSIDIAN);
-
-    public static final Block OBSIDIAN_GRINDER = registerBlock("obsidian_grinder",
-            new ObsidianGrinderBlock(FabricBlockSettings.of(Material.STONE)
-                    .strength(22.5F,600.0F).requiresTool().nonOpaque()), ModItemGroup.OBSIDIAN);
     public static final Block OBSIDIAN_BLOCK = registerBlock("obsidian_block",
             new Block(FabricBlockSettings.of(Material.STONE).strength(22.5F,600.0F).requiresTool()), ModItemGroup.OBSIDIAN);
     public static final Block REFINED_OBSIDIAN = registerBlock("refined_obsidian",
             new Block(FabricBlockSettings.of(Material.STONE).strength(22.5F,600.0F).requiresTool()), ModItemGroup.OBSIDIAN);
-    public static final Block OBSIDIAN_LAMP = registerBlock("obsidian_lamp",
-            new ObsidianLampBlock(FabricBlockSettings.of(Material.STONE).strength(22.5F,600.0F).requiresTool()
-                    .luminance(state -> state.get(ObsidianLampBlock.LIT) ? 15 : 0).sounds(BlockSoundGroup.GLASS)), ModItemGroup.OBSIDIAN);
+    public static final Block OBSIDIAN_TABLE_LAMP = registerBlock("obsidian_table_lamp",
+            new Block(FabricBlockSettings.of(Material.STONE).strength(22.5F,600.0F).requiresTool().sounds(BlockSoundGroup.GLASS)
+                    .luminance(15).nonOpaque()), ModItemGroup.OBSIDIAN);
+    public static final Block OBSIDIAN_END_TABLE = registerBlock("obsidian_end_table",
+            new Block(FabricBlockSettings.of(Material.STONE).strength(22.5F,600.0F).requiresTool()), ModItemGroup.OBSIDIAN);
+    public static final Block OBSIDIAN_VASE = registerBlock("obsidian_vase",
+            new ObsideriteInfusingStationBlock(FabricBlockSettings.of(Material.STONE)
+                    .strength(22.5F,600.0F).sounds(BlockSoundGroup.GLASS).nonOpaque()), ModItemGroup.OBSIDIAN);
     //Stonecutter blocks
     public static final Block OBSIDIAN_STAIRS = registerBlock("obsidian_stairs",
             new StairsBlock(ModBlocks.OBSIDIAN_BLOCK.getDefaultState(),
@@ -49,11 +42,26 @@ public class ModBlocks {
             new SlabBlock(FabricBlockSettings.of(Material.STONE).strength(22.5F,600.0F).requiresTool()), ModItemGroup.OBSIDIAN);
     public static final Block OBSIDIAN_WALL = registerBlock("obsidian_wall",
             new WallBlock(FabricBlockSettings.of(Material.STONE).strength(22.5F,600.0F).requiresTool()), ModItemGroup.OBSIDIAN);
+    /* --------------------- [End] Decorative Blocks --------------------- */
 
-    //Deco blocks
-    public static final Block OBSIDIAN_TABLE_LAMP = registerBlock("obsidian_table_lamp",
-            new Block(FabricBlockSettings.of(Material.STONE).strength(22.5F,600.0F).requiresTool().sounds(BlockSoundGroup.GLASS)
-                    .luminance(15).nonOpaque()), ModItemGroup.OBSIDIAN);
+    //Obsidian Infusing Station
+    public static final Block OBSIDERITE_INFUSING_STATION = registerBlock("obsiderite_infusing_station",
+            new ObsideriteInfusingStationBlock(FabricBlockSettings.of(Material.STONE)
+                    .strength(22.5F,600.0F).requiresTool().nonOpaque()), ModItemGroup.OBSIDIAN);
+    public static final Block OBSIDERITE_CHEST = registerBlock("obsiderite_chest",
+            new ObsideriteChestBlock(FabricBlockSettings.of(Material.STONE)
+                    .strength(22.5F,600.0F).requiresTool().nonOpaque()), ModItemGroup.OBSIDIAN);
+
+
+
+    public static final Block OBSIDIAN_GRINDER = registerBlock("obsidian_grinder",
+            new ObsidianGrinderBlock(FabricBlockSettings.of(Material.STONE)
+                    .strength(22.5F,600.0F).requiresTool().nonOpaque()), ModItemGroup.OBSIDIAN);
+
+    public static final Block OBSIDIAN_LAMP = registerBlock("obsidian_lamp",
+            new ObsidianLampBlock(FabricBlockSettings.of(Material.STONE).strength(22.5F,600.0F).requiresTool()
+                    .luminance(state -> state.get(ObsidianLampBlock.LIT) ? 15 : 0).sounds(BlockSoundGroup.GLASS)), ModItemGroup.OBSIDIAN);
+
 
 
     private static Block registerBlock(String name, Block block, ItemGroup tab) {

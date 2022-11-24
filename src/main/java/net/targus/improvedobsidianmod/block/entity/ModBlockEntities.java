@@ -11,6 +11,7 @@ import team.reborn.energy.api.EnergyStorage;
 
 public class ModBlockEntities {
     public static BlockEntityType<ObsideriteInfusingBlockEntity> OBSIDERITE_INFUSING_STATION;
+    public static BlockEntityType<ObsideriteChestBlockEntity> OBSIDERITE_CHEST;
     public static BlockEntityType<ObsidianGrinderBlockEntity> OBSIDIAN_GRINDER;
 
     public static void registerBlockEntities() {
@@ -18,6 +19,10 @@ public class ModBlockEntities {
                 new Identifier(ImprovedObsidianMod.MOD_ID, "obsiderite_infusing_station"),
                 FabricBlockEntityTypeBuilder.create(ObsideriteInfusingBlockEntity::new,
                         ModBlocks.OBSIDERITE_INFUSING_STATION).build(null));
+        OBSIDERITE_CHEST = Registry.register(Registry.BLOCK_ENTITY_TYPE,
+                new Identifier(ImprovedObsidianMod.MOD_ID, "obsiderite_chest"),
+                FabricBlockEntityTypeBuilder.create(ObsideriteChestBlockEntity::new,
+                        ModBlocks.OBSIDERITE_CHEST).build(null));
         OBSIDIAN_GRINDER = Registry.register(Registry.BLOCK_ENTITY_TYPE,
                 new Identifier(ImprovedObsidianMod.MOD_ID, "obsidian_grinder"),
                 FabricBlockEntityTypeBuilder.create(ObsidianGrinderBlockEntity::new,
