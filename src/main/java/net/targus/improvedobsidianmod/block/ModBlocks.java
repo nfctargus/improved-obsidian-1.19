@@ -30,10 +30,10 @@ public class ModBlocks {
             new Block(FabricBlockSettings.of(Material.STONE).strength(22.5F,600.0F).requiresTool().sounds(BlockSoundGroup.GLASS)
                     .luminance(15).nonOpaque()), ModItemGroup.OBSIDIAN);
     public static final Block OBSIDIAN_END_TABLE = registerBlock("obsidian_end_table",
-            new Block(FabricBlockSettings.of(Material.STONE).strength(22.5F,600.0F).requiresTool()), ModItemGroup.OBSIDIAN);
+            new Block(FabricBlockSettings.of(Material.STONE).strength(22.5F,600.0F).nonOpaque().requiresTool()), ModItemGroup.OBSIDIAN);
     public static final Block OBSIDIAN_VASE = registerBlock("obsidian_vase",
-            new ObsideriteInfusingStationBlock(FabricBlockSettings.of(Material.STONE)
-                    .strength(22.5F,600.0F).sounds(BlockSoundGroup.GLASS).nonOpaque()), ModItemGroup.OBSIDIAN);
+            new Block(FabricBlockSettings.of(Material.STONE)
+                    .nonOpaque()), ModItemGroup.OBSIDIAN);
     //Stonecutter blocks
     public static final Block OBSIDIAN_STAIRS = registerBlock("obsidian_stairs",
             new StairsBlock(ModBlocks.OBSIDIAN_BLOCK.getDefaultState(),

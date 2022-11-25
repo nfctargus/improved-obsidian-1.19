@@ -20,17 +20,19 @@
   "block.improvedobsidianmod.obsiderite_infusing_station": "Obsiderite Infusing Station",
   "block.improvedobsidianmod.obsiderite_chest": "Obsiderite Chest",
   "block.improvedobsidianmod.obsidian_grinder": "Obsidian Grinder",
+
   "block.improvedobsidianmod.obsidian_vase": "Obsidian Vase",
   "block.improvedobsidianmod.obsidian_end_table": "Obsidian End Table",
-  "block.improvedobsidianmod.obsidian_block": "Block of Obsidian",
-  "block.improvedobsidianmod.refined_obsidian": "Refined Obsidian",
   "block.improvedobsidianmod.obsidian_glass": "Obsidian Glass",
   "block.improvedobsidianmod.obsidian_glass_pane": "Obsidian Glass Pane",
+  "block.improvedobsidianmod.obsidian_table_lamp": "Obsidian Table Lamp",
+
+  "block.improvedobsidianmod.obsidian_block": "Block of Obsidian",
+  "block.improvedobsidianmod.refined_obsidian": "Refined Obsidian",
   "block.improvedobsidianmod.obsidian_stairs": "Obsidian Stairs",
   "block.improvedobsidianmod.obsidian_slab": "Obsidian Slab",
   "block.improvedobsidianmod.obsidian_wall": "Obsidian Wall",
   "block.improvedobsidianmod.obsidian_lamp": "Obsidian Lamp",
-  "block.improvedobsidianmod.obsidian_table_lamp": "Obsidian Table Lamp",
 
   "container.improvedobsidianmod.obsiderite_chest": "Obsiderite Chest"
 }

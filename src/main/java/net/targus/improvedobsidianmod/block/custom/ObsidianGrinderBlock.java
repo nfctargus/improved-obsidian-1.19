@@ -27,7 +27,7 @@ public class ObsidianGrinderBlock extends BlockWithEntity implements BlockEntity
         super(settings);
     }
 
-    private static VoxelShape SHAPE = Block.createCuboidShape(0, 0, 0, 16, 16, 13);
+    private static VoxelShape SHAPE = Block.createCuboidShape(2, 0, 2, 14, 15, 14);
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
