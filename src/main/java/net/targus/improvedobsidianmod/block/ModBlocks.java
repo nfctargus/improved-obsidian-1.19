@@ -34,6 +34,9 @@ public class ModBlocks {
     public static final Block OBSIDIAN_VASE = registerBlock("obsidian_vase",
             new Block(FabricBlockSettings.of(Material.STONE)
                     .nonOpaque()), ModItemGroup.OBSIDIAN);
+    public static final Block OBSIDIAN_FLOWER_POT = registerBlock("obsidian_flower_pot",
+            new ObsidianFlowerPotBlock(Blocks.AIR,FabricBlockSettings.of(Material.STONE)
+                    .nonOpaque()), ModItemGroup.OBSIDIAN);
     //Stonecutter blocks
     public static final Block OBSIDIAN_STAIRS = registerBlock("obsidian_stairs",
             new StairsBlock(ModBlocks.OBSIDIAN_BLOCK.getDefaultState(),

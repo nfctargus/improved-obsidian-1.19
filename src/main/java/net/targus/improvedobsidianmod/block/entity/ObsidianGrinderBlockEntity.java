@@ -143,6 +143,7 @@ public class ObsidianGrinderBlockEntity extends BlockEntity implements ExtendedS
         for (int i = 0; i < entity.size(); i++) {
             inventory.setStack(i, entity.getStack(i));
         }
+
         //Checking recipe for Obsidian Dust
         if(canInsertAmountIntoOutputSlot(inventory) && canInsertItemIntoOutputSlot(inventory, ModItems.OBSIDIAN_DUST)) {
             if(entity.getStack(0).getItem() == ModItems.OBSIDIAN_SHARD && entity.getStack(1).isEmpty() ||
@@ -152,10 +153,12 @@ public class ObsidianGrinderBlockEntity extends BlockEntity implements ExtendedS
         }
 
         //Checking recipe for Obsiderite Dust
-        if(canInsertAmountIntoOutputSlot(inventory) && canInsertItemIntoOutputSlot(inventory, ModItems.OBSIDERITE_DUST)) {
-            if(entity.getStack(0).getItem() == ModItems.OBSIDIAN_SHARD && entity.getStack(1).getItem() == Items.NETHERITE_INGOT  ||
-                    entity.getStack(1).getItem() == ModItems.OBSIDIAN_SHARD && entity.getStack(0).getItem() == Items.NETHERITE_INGOT ) {
-                return 2;
+        if(entity.getStack(0).getCount() >= 4 || entity.getStack(1).getCount() >= 4) {
+            if(canInsertAmountIntoOutputSlot(inventory) && canInsertItemIntoOutputSlot(inventory, ModItems.OBSIDERITE_DUST)) {
+                if(entity.getStack(0).getItem() == ModItems.OBSIDIAN_SHARD && entity.getStack(1).getItem() == Items.NETHERITE_INGOT  ||
+                        entity.getStack(1).getItem() == ModItems.OBSIDIAN_SHARD && entity.getStack(0).getItem() == Items.NETHERITE_INGOT ) {
+                    return 2;
+                }
             }
         }
         return 0;

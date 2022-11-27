@@ -1,19 +1,16 @@
 {
     "type": "minecraft:crafting_shaped",
     "key": {
-        "#": {
-            "item": "minecraft:stick"
-        },
         "X": {
             "item": "improvedobsidianmod:obsiderite_ingot"
         }
     },
     "pattern": [
-        " X ",
-        " # ",
-        " # "
+        "XXX",
+        "X X",
+        "XXX"
     ],
     "result": {
-        "item": "improvedobsidianmod:obsiderite_shovel"
+        "item": "improvedobsidianmod:obsiderite_chest"
     }
 }

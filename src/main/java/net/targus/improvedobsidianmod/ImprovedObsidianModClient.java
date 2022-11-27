@@ -21,6 +21,7 @@ public class ImprovedObsidianModClient implements ClientModInitializer {
         HandledScreens.register(ModScreenHandlers.OBSIDIAN_GRINDER_SCREEN_HANDLER, ObsidianGrinderScreen::new);
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.OBSIDIAN_GLASS_BLOCK, RenderLayer.getTranslucent());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.OBSIDIAN_VASE, RenderLayer.getTranslucent());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.OBSIDIAN_FLOWER_POT, RenderLayer.getTranslucent());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.OBSIDIAN_GLASS_PANE_BLOCK, RenderLayer.getTranslucent());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.OBSIDIAN_TABLE_LAMP, RenderLayer.getTranslucent());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.OBSIDIAN_GRINDER, RenderLayer.getTranslucent());

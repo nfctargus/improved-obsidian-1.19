@@ -21,22 +21,22 @@ public class ModItems {
             new Item(new FabricItemSettings().group(ModItemGroup.OBSIDIAN)));
     //Obsidian Tools
     public static final Item OBSIDERITE_PICKAXE = registerItem("obsiderite_pickaxe",
-            new PickaxeItem(ToolMaterials.DIAMOND,3,-2.8f,
+            new PickaxeItem(ToolMaterials.DIAMOND,4,-2.7f,
                     new FabricItemSettings().group(ModItemGroup.OBSIDIAN).maxCount(1).fireproof()));
 
     public static final Item OBSIDERITE_SWORD = registerItem("obsiderite_sword",
-            new SwordItem(ToolMaterials.DIAMOND,5,-2.3f,
+            new SwordItem(ToolMaterials.DIAMOND,6,-2.3f,
                     new FabricItemSettings().group(ModItemGroup.OBSIDIAN).maxCount(1).fireproof()));
 
     public static final Item OBSIDERITE_HOE = registerItem("obsiderite_hoe",
-            new ObsideriteHoeItem(ToolMaterials.DIAMOND,5,-2.3f,
+            new ObsideriteHoeItem(ToolMaterials.DIAMOND,0,0.2f,
                     new FabricItemSettings().group(ModItemGroup.OBSIDIAN).maxCount(1).fireproof()));
 
     public static final Item OBSIDERITE_AXE = registerItem("obsiderite_axe",
-            new AxeItem(ToolMaterials.DIAMOND,6,-3f,
+            new AxeItem(ToolMaterials.DIAMOND,7,-3f,
                     new FabricItemSettings().group(ModItemGroup.OBSIDIAN).maxCount(1).fireproof()));
     public static final Item OBSIDERITE_SHOVEL = registerItem("obsiderite_shovel",
-            new ShovelItem(ToolMaterials.DIAMOND,3,-3f,
+            new ShovelItem(ToolMaterials.DIAMOND,4,-3f,
                     new FabricItemSettings().group(ModItemGroup.OBSIDIAN).maxCount(1).fireproof()));
 
     //Obsidian Armor

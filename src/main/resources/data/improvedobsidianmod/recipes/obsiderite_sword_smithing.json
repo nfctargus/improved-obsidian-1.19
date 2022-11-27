@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:smithing",
+    "addition": {
+        "item": "improvedobsidianmod:obsiderite_ingot"
+    },
+    "base": {
+        "item": "minecraft:netherite_sword"
+    },
+    "result": {
+        "item": "improvedobsidianmod:obsiderite_sword"
+    }
+}

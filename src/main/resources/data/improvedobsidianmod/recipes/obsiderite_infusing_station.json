@@ -13,7 +13,7 @@
     },
     "pattern": [
         "NNN",
-        "NBN",
+        "OBO",
         "OOO"
     ],
     "result": {

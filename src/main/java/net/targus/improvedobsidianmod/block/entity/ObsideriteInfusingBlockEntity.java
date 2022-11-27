@@ -38,8 +38,12 @@ import team.reborn.energy.api.base.SimpleEnergyStorage;
 
 public class ObsideriteInfusingBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(3, ItemStack.EMPTY);
+    protected final PropertyDelegate propertyDelegate;
 
-    public final SimpleEnergyStorage energyStorage = new SimpleEnergyStorage(5000,32,32) {
+    private static int ENERGY_COST = 320;
+    private int progress = 0;
+    private int maxProgress = ENERGY_COST;
+    public final SimpleEnergyStorage energyStorage = new SimpleEnergyStorage(ENERGY_COST * 10,ENERGY_COST * 4,ENERGY_COST * 2) {
         @Override
         protected void onFinalCommit() {
             markDirty();
@@ -54,9 +58,7 @@ public class ObsideriteInfusingBlockEntity extends BlockEntity implements Extend
             }
         }
     };
-    protected final PropertyDelegate propertyDelegate;
-    private int progress = 0;
-    private int maxProgress = 72;
+
 
     public ObsideriteInfusingBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.OBSIDERITE_INFUSING_STATION, pos, state);
@@ -132,14 +134,14 @@ public class ObsideriteInfusingBlockEntity extends BlockEntity implements Extend
 
         if(hasEnergyItem(entity)) {
             try(Transaction transaction = Transaction.openOuter()) {
-                entity.energyStorage.insert(64, transaction);
+                entity.energyStorage.insert(ENERGY_COST * 2, transaction);
                 transaction.commit();
                 entity.setStack(0,new ItemStack(Items.BUCKET));
             }
         }
 
         if(hasRecipe(entity) && hasEnoughEnergy(entity)) {
-            entity.progress++;
+            entity.progress+=2;
 
             markDirty(world, blockPos, state);
             if(entity.progress >= entity.maxProgress) {
@@ -159,14 +161,14 @@ public class ObsideriteInfusingBlockEntity extends BlockEntity implements Extend
     // Energy
     private static void extractEnergy(ObsideriteInfusingBlockEntity entity) {
         try(Transaction transaction = Transaction.openOuter()) {
-            entity.energyStorage.extract(32, transaction);
+            entity.energyStorage.extract(ENERGY_COST, transaction);
             transaction.commit();
 
         }
     }
 
     private static boolean hasEnoughEnergy(ObsideriteInfusingBlockEntity entity) {
-        return entity.energyStorage.amount >= 32;
+        return entity.energyStorage.amount >= ENERGY_COST;
     }
 
     private static boolean hasEnergyItem(ObsideriteInfusingBlockEntity entity) {

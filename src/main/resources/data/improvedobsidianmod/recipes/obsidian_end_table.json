@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "key": {
+        "#": {
+            "tag": "minecraft:planks"
+        },
+        "X": {
+            "item": "improvedobsidianmod:obsidian_shard"
+        }
+    },
+    "pattern": [
+        "###",
+        "X X",
+        "X X"
+    ],
+    "result": {
+        "item": "improvedobsidianmod:obsidian_end_table"
+    }
+}
