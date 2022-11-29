@@ -1,12 +1,15 @@
 package net.targus.improvedobsidianmod.item;
 
+import net.fabricmc.fabric.api.item.v1.EquipmentSlotProvider;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.block.StairsBlock;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.*;
+import net.minecraft.tag.BlockTags;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import net.targus.improvedobsidianmod.ImprovedObsidianMod;
+import net.targus.improvedobsidianmod.item.custom.ObsideriteHammerItem;
 import net.targus.improvedobsidianmod.item.custom.ObsideriteHoeItem;
 
 public class ModItems {
@@ -52,6 +55,12 @@ public class ModItems {
     public static final Item OBSIDERITE_BOOTS = registerItem("obsiderite_boots",
             new ArmorItem(ModArmorMaterials.OBSIDERITE, EquipmentSlot.FEET,
                     new FabricItemSettings().group(ModItemGroup.OBSIDIAN).maxCount(1).fireproof()));
+
+    //Custom Weapons
+    public static final Item OBSIDERITE_HAMMER = registerItem("obsiderite_hammer",
+            new ObsideriteHammerItem(ToolMaterials.DIAMOND,10,-2.3f, BlockTags.PICKAXE_MINEABLE,
+                    new FabricItemSettings().group(ModItemGroup.OBSIDIAN).maxCount(1).fireproof()));
+    //(ToolMaterial material, int attackDamage, float attackSpeed,TagKey<Block> effectiveBlocks, Settings settings)
     public static void registerModItems() {
         ImprovedObsidianMod.LOGGER.debug("Registering Mod Items for " + ImprovedObsidianMod.MOD_ID);
     }

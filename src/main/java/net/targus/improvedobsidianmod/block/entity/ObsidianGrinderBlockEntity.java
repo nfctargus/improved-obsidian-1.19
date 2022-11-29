@@ -120,21 +120,36 @@ public class ObsidianGrinderBlockEntity extends BlockEntity implements ExtendedS
         }
 
         if(hasRecipe(entity) == 1) {
-            entity.removeStack(0, 1);
-            entity.removeStack(1, 1);
-            //Create the crafted item in the desired slot
+            if(entity.getStack(0).getItem() == ModItems.OBSIDIAN_SHARD) {
+                entity.removeStack(0, 4);
+            } else if (entity.getStack(1).getItem() == ModItems.OBSIDIAN_SHARD) {
+                entity.removeStack(1, 4);
+            }
+                        //Create the crafted item in the desired slot
             entity.setStack(2, new ItemStack(ModItems.OBSIDIAN_DUST,
                     entity.getStack(2).getCount() + 1));
             //Reset the crafting progress
             entity.resetProgress();
         } else if (hasRecipe(entity) == 2) {
-            entity.removeStack(0, 1);
-            entity.removeStack(1, 1);
-            //Create the crafted item in the desired slot
-            entity.setStack(2, new ItemStack(ModItems.OBSIDERITE_DUST,
-                    entity.getStack(2).getCount() + 1));
-            //Reset the crafting progress
-            entity.resetProgress();
+            if(entity.getStack(0).getItem() == ModItems.OBSIDIAN_SHARD) {
+
+                entity.removeStack(0, 4);
+                entity.removeStack(1, 1);
+                //Create the crafted item in the desired slot
+                entity.setStack(2, new ItemStack(ModItems.OBSIDERITE_DUST,
+                        entity.getStack(2).getCount() + 1));
+                //Reset the crafting progress
+                entity.resetProgress();
+            } else if (entity.getStack(1).getItem() == ModItems.OBSIDIAN_SHARD) {
+                entity.removeStack(0, 1);
+                entity.removeStack(1, 4);
+                //Create the crafted item in the desired slot
+                entity.setStack(2, new ItemStack(ModItems.OBSIDERITE_DUST,
+                        entity.getStack(2).getCount() + 1));
+                //Reset the crafting progress
+                entity.resetProgress();
+            }
+
         }
     }
 
@@ -144,16 +159,16 @@ public class ObsidianGrinderBlockEntity extends BlockEntity implements ExtendedS
             inventory.setStack(i, entity.getStack(i));
         }
 
-        //Checking recipe for Obsidian Dust
-        if(canInsertAmountIntoOutputSlot(inventory) && canInsertItemIntoOutputSlot(inventory, ModItems.OBSIDIAN_DUST)) {
-            if(entity.getStack(0).getItem() == ModItems.OBSIDIAN_SHARD && entity.getStack(1).isEmpty() ||
-                    entity.getStack(1).getItem() == ModItems.OBSIDIAN_SHARD && entity.getStack(0).isEmpty()) {
-                return 1;
-            }
-        }
+        //Making sure we have 4 Obsidian shards in one of the slots
+        if(entity.getStack(0).getItem() == ModItems.OBSIDIAN_SHARD && entity.getStack(0).getCount() >=4 ||
+                entity.getStack(1).getItem() == ModItems.OBSIDIAN_SHARD && entity.getStack(1).getCount() >=4) {
 
-        //Checking recipe for Obsiderite Dust
-        if(entity.getStack(0).getCount() >= 4 || entity.getStack(1).getCount() >= 4) {
+            if(canInsertAmountIntoOutputSlot(inventory) && canInsertItemIntoOutputSlot(inventory, ModItems.OBSIDIAN_DUST)) {
+                if(entity.getStack(0).getItem() == ModItems.OBSIDIAN_SHARD && entity.getStack(1).isEmpty() ||
+                        entity.getStack(1).getItem() == ModItems.OBSIDIAN_SHARD && entity.getStack(0).isEmpty()) {
+                    return 1;
+                }
+            }
             if(canInsertAmountIntoOutputSlot(inventory) && canInsertItemIntoOutputSlot(inventory, ModItems.OBSIDERITE_DUST)) {
                 if(entity.getStack(0).getItem() == ModItems.OBSIDIAN_SHARD && entity.getStack(1).getItem() == Items.NETHERITE_INGOT  ||
                         entity.getStack(1).getItem() == ModItems.OBSIDIAN_SHARD && entity.getStack(0).getItem() == Items.NETHERITE_INGOT ) {
