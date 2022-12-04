@@ -2,6 +2,13 @@
     "replace": false,
     "values": [
         "improvedobsidianmod:refined_obsidian",
+        "improvedobsidianmod:obsidian_stairs",
+        "improvedobsidianmod:obsidian_slab",
+        "improvedobsidianmod:obsiderite_chest",
+        "improvedobsidianmod:obsiderite_infusing_station",
+        "improvedobsidianmod:obsidian_grinder",
+        "improvedobsidianmod:obsidian_end_table",
+        "improvedobsidianmod:obsidian_lamp",
         "improvedobsidianmod:obsidian_block"
     ]
 }

@@ -18,51 +18,49 @@ public class ModBlocks {
 /* --------------------- Decorative Blocks --------------------- */
     public static final Block OBSIDIAN_GLASS_BLOCK = registerBlock("obsidian_glass",
             new ObsidianGlassBlock(FabricBlockSettings.of(Material.GLASS)
-                    .strength(22.5F,600.0F).sounds(BlockSoundGroup.GLASS).nonOpaque()),ModItemGroup.OBSIDIAN);
+                    .strength(0.2F,600.0F).sounds(BlockSoundGroup.GLASS).nonOpaque()),ModItemGroup.OBSIDIAN);
     public static final Block OBSIDIAN_GLASS_PANE_BLOCK = registerBlock("obsidian_glass_pane",
             new PaneBlock(FabricBlockSettings.of(Material.GLASS)
-                    .strength(22.5F,600.0F).sounds(BlockSoundGroup.GLASS).nonOpaque()),ModItemGroup.OBSIDIAN);
+                    .strength(0.2F,600.0F).sounds(BlockSoundGroup.GLASS).nonOpaque()),ModItemGroup.OBSIDIAN);
     public static final Block OBSIDIAN_BLOCK = registerBlock("obsidian_block",
-            new Block(FabricBlockSettings.of(Material.STONE).strength(22.5F,600.0F).requiresTool()), ModItemGroup.OBSIDIAN);
+            new Block(FabricBlockSettings.of(Material.STONE).strength(5.0F,600.0F).requiresTool()), ModItemGroup.OBSIDIAN);
     public static final Block REFINED_OBSIDIAN = registerBlock("refined_obsidian",
-            new Block(FabricBlockSettings.of(Material.STONE).strength(22.5F,600.0F).requiresTool()), ModItemGroup.OBSIDIAN);
+            new Block(FabricBlockSettings.of(Material.STONE).strength(5.0F,600.0F).requiresTool()), ModItemGroup.OBSIDIAN);
     public static final Block OBSIDIAN_TABLE_LAMP = registerBlock("obsidian_table_lamp",
-            new Block(FabricBlockSettings.of(Material.STONE).strength(22.5F,600.0F).requiresTool().sounds(BlockSoundGroup.GLASS)
+            new Block(FabricBlockSettings.of(Material.STONE).strength(0.2F,600.0F).requiresTool().sounds(BlockSoundGroup.GLASS)
                     .luminance(15).nonOpaque()), ModItemGroup.OBSIDIAN);
     public static final Block OBSIDIAN_END_TABLE = registerBlock("obsidian_end_table",
-            new Block(FabricBlockSettings.of(Material.STONE).strength(22.5F,600.0F).nonOpaque().requiresTool()), ModItemGroup.OBSIDIAN);
-    public static final Block OBSIDIAN_VASE = registerBlock("obsidian_vase",
-            new Block(FabricBlockSettings.of(Material.STONE)
-                    .nonOpaque()), ModItemGroup.OBSIDIAN);
+            new Block(FabricBlockSettings.of(Material.STONE).strength(2.0F,600.0F).nonOpaque().requiresTool()), ModItemGroup.OBSIDIAN);
+
     public static final Block OBSIDIAN_FLOWER_POT = registerBlock("obsidian_flower_pot",
             new ObsidianFlowerPotBlock(Blocks.AIR,FabricBlockSettings.of(Material.STONE)
                     .nonOpaque()), ModItemGroup.OBSIDIAN);
     //Stonecutter blocks
     public static final Block OBSIDIAN_STAIRS = registerBlock("obsidian_stairs",
             new StairsBlock(ModBlocks.OBSIDIAN_BLOCK.getDefaultState(),
-                    FabricBlockSettings.of(Material.STONE).strength(22.5F,600.0F).requiresTool()), ModItemGroup.OBSIDIAN);
+                    FabricBlockSettings.of(Material.STONE).strength(2.0F,600.0F).requiresTool()), ModItemGroup.OBSIDIAN);
     public static final Block OBSIDIAN_SLAB = registerBlock("obsidian_slab",
-            new SlabBlock(FabricBlockSettings.of(Material.STONE).strength(22.5F,600.0F).requiresTool()), ModItemGroup.OBSIDIAN);
+            new SlabBlock(FabricBlockSettings.of(Material.STONE).strength(2.0F,600.0F).requiresTool()), ModItemGroup.OBSIDIAN);
     public static final Block OBSIDIAN_WALL = registerBlock("obsidian_wall",
-            new WallBlock(FabricBlockSettings.of(Material.STONE).strength(22.5F,600.0F).requiresTool()), ModItemGroup.OBSIDIAN);
+            new WallBlock(FabricBlockSettings.of(Material.STONE).strength(2.0F,600.0F).requiresTool()), ModItemGroup.OBSIDIAN);
     /* --------------------- [End] Decorative Blocks --------------------- */
 
     //Obsidian Infusing Station
     public static final Block OBSIDERITE_INFUSING_STATION = registerBlock("obsiderite_infusing_station",
             new ObsideriteInfusingStationBlock(FabricBlockSettings.of(Material.STONE)
-                    .strength(22.5F,600.0F).requiresTool().nonOpaque()), ModItemGroup.OBSIDIAN);
+                    .strength(3.0F,600.0F).requiresTool().nonOpaque()), ModItemGroup.OBSIDIAN);
     public static final Block OBSIDERITE_CHEST = registerBlock("obsiderite_chest",
             new ObsideriteChestBlock(FabricBlockSettings.of(Material.STONE)
-                    .strength(22.5F,600.0F).requiresTool().nonOpaque()), ModItemGroup.OBSIDIAN);
+                    .strength(3.0F,600.0F).requiresTool().nonOpaque()), ModItemGroup.OBSIDIAN);
 
 
 
     public static final Block OBSIDIAN_GRINDER = registerBlock("obsidian_grinder",
             new ObsidianGrinderBlock(FabricBlockSettings.of(Material.STONE)
-                    .strength(22.5F,600.0F).requiresTool().nonOpaque()), ModItemGroup.OBSIDIAN);
+                    .strength(3.0F,600.0F).requiresTool().nonOpaque()), ModItemGroup.OBSIDIAN);
 
     public static final Block OBSIDIAN_LAMP = registerBlock("obsidian_lamp",
-            new ObsidianLampBlock(FabricBlockSettings.of(Material.STONE).strength(22.5F,600.0F).requiresTool()
+            new ObsidianLampBlock(FabricBlockSettings.of(Material.STONE).strength(0.2F,600.0F).requiresTool()
                     .luminance(state -> state.get(ObsidianLampBlock.LIT) ? 15 : 0).sounds(BlockSoundGroup.GLASS)), ModItemGroup.OBSIDIAN);
 
 

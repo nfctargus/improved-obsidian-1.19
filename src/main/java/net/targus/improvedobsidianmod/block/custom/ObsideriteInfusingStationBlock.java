@@ -63,7 +63,6 @@ public class ObsideriteInfusingStationBlock extends BlockWithEntity implements B
 
 
 
-
     /* BLOCK ENTITY */
 
     @Override
