@@ -4,7 +4,7 @@
   "version": "${version}",
 
   "name": "Improved Obsidian Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "description": "This mod is based around Obsidian. It adds a new tier of weapons, armor and tools along with nice decorative blocks.",
   "authors": [
     "Kieran Lawrence"
   ],
