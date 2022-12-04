@@ -1,0 +1,44 @@
+{
+    "display": {
+        "icon": {
+            "item": "improvedobsidianmod:obsiderite_ingot"
+        },
+        "title": "Obsiderite Time!!",
+        "description": "Obtained Obsiderite Ingot",
+        "frame": "goal",
+        "show_toast": true
+    },
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+        "has_obsiderite_ingot": {
+            "conditions": {
+                "items": [
+                    {
+                        "items": [
+                            "improvedobsidianmod:obsiderite_ingot"
+                        ]
+                    }
+                ]
+            },
+            "trigger": "minecraft:inventory_changed"
+        }
+    },
+    "requirements": [
+        [
+            "has_obsiderite_ingot"
+        ]
+    ],
+    "rewards": {
+        "recipes": [
+            "improvedobsidianmod:obsiderite_helmet_smithing",
+            "improvedobsidianmod:obsiderite_chestplate_smithing",
+            "improvedobsidianmod:obsiderite_leggings_smithing",
+            "improvedobsidianmod:obsiderite_sword_smithing",
+            "improvedobsidianmod:obsiderite_pickaxe_smithing",
+            "improvedobsidianmod:obsiderite_shovel_smithing",
+            "improvedobsidianmod:obsiderite_axe_smithing",
+            "improvedobsidianmod:obsiderite_hoe_smithing"
+        ],
+        "experience": 5
+    }
+}

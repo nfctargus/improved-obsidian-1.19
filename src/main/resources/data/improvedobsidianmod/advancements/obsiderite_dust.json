@@ -1,0 +1,45 @@
+{
+    "display": {
+        "icon": {
+            "item": "improvedobsidianmod:obsiderite_dust"
+        },
+        "title": "Dusted",
+        "description": "Acquired Obsiderite Dust",
+        "frame": "goal",
+        "show_toast": true
+    },
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+        "has_obsiderite_dust": {
+            "conditions": {
+                "items": [
+                    {
+                        "items": [
+                            "improvedobsidianmod:obsiderite_dust"
+                        ]
+                    }
+                ]
+            },
+            "trigger": "minecraft:inventory_changed"
+        },
+        "has_the_recipe": {
+            "conditions": {
+                "recipe": "minecraft:netherite_ingot"
+            },
+            "trigger": "minecraft:recipe_unlocked"
+        }
+    },
+    "requirements": [
+        [
+            "has_obsiderite_dust",
+            "has_the_recipe"
+        ]
+    ],
+    "rewards": {
+        "recipes": [
+            "improvedobsidianmod:obsiderite_infusing_station",
+            "improvedobsidianmod:obsiderite_ingot"
+        ],
+        "experience": 2
+    }
+}

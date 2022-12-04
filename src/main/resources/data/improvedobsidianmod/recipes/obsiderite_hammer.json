@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "key": {
+        "X": {
+            "item": "improvedobsidianmod:obsiderite_ingot"
+        },
+        "S": {
+            "item": "minecraft:sticks"
+        }
+    },
+    "pattern": [
+        "XXX",
+        "XSX",
+        " S "
+    ],
+    "result": {
+        "item": "improvedobsidianmod:obsiderite_hammer"
+    }
+}

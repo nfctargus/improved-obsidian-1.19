@@ -1,0 +1,28 @@
+{
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+        "has_obsidian_dust": {
+            "conditions": {
+                "items": [
+                    {
+                        "items": [
+                            "improvedobsidianmod:obsidian_dust"
+                        ]
+                    }
+                ]
+            },
+            "trigger": "minecraft:inventory_changed"
+        }
+    },
+    "requirements": [
+        [
+            "has_obsidian_dust"
+        ]
+    ],
+    "rewards": {
+        "recipes": [
+            "improvedobsidianmod:obsidian_glass"
+        ],
+        "experience": 0.5
+    }
+}
