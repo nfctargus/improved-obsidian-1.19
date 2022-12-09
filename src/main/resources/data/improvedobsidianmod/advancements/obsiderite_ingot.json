@@ -3,8 +3,13 @@
         "icon": {
             "item": "improvedobsidianmod:obsiderite_ingot"
         },
-        "title": "Obsiderite Time!!",
-        "description": "Obtained Obsiderite Ingot",
+
+        "title": {
+            "translate": "advancements.improvedobsidianmod.obsiderite_ingot.title"
+        },
+        "description": {
+            "translate": "advancements.improvedobsidianmod.obsiderite_ingot.description"
+        },
         "frame": "goal",
         "show_toast": true
     },

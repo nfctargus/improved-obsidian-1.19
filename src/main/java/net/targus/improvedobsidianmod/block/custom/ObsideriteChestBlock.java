@@ -95,4 +95,5 @@ public class ObsideriteChestBlock extends BlockWithEntity implements BlockEntity
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
         return new ObsideriteChestBlockEntity(pos, state);
     }
+
 }

@@ -3,8 +3,12 @@
         "icon": {
             "item": "improvedobsidianmod:obsidian_grinder"
         },
-        "title": "Grind Time",
-        "description": "Unlocked Obsidian Grinder",
+        "title": {
+            "translate": "advancements.improvedobsidianmod.obsidian_grinder.title"
+        },
+        "description": {
+            "translate": "advancements.improvedobsidianmod.obsidian_grinder.description"
+        },
         "frame": "goal",
         "show_toast": true
     },

@@ -34,5 +34,18 @@
   "block.improvedobsidianmod.obsidian_wall": "Obsidian Wall",
   "block.improvedobsidianmod.obsidian_lamp": "Obsidian Lamp",
 
-  "container.improvedobsidianmod.obsiderite_chest": "Obsiderite Chest"
+  "container.improvedobsidianmod.obsiderite_chest": "Obsiderite Chest",
+
+  "advancements.improvedobsidianmod.obsiderite_armor.title": "Cover Me in Obsiderite",
+  "advancements.improvedobsidianmod.obsiderite_armor.description": "Get a full suit of Obsiderite armor",
+  "advancements.improvedobsidianmod.obsiderite_dust.title": "Dusted",
+  "advancements.improvedobsidianmod.obsiderite_dust.description": "Acquired Obsiderite Dust",
+  "advancements.improvedobsidianmod.obsiderite_hammer.title": "Hammer Time",
+  "advancements.improvedobsidianmod.obsiderite_hammer.description": "Craft an Obsiderite Hammer",
+  "advancements.improvedobsidianmod.obsiderite_ingot.title": "Obsid-alright",
+  "advancements.improvedobsidianmod.obsiderite_ingot.description": "Infused Netherite and Obsidian successfully",
+  "advancements.improvedobsidianmod.obsidian_grinder.title": "Time to Grind",
+  "advancements.improvedobsidianmod.obsidian_grinder.description": "Obtained the Obsidian Grinder",
+  "advancements.improvedobsidianmod.obsidian_shard.title": "This is shard",
+  "advancements.improvedobsidianmod.obsidian_shard.description": "Looted an Obsidian Shard"
 }

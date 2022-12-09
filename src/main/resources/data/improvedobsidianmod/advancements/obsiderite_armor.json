@@ -1,0 +1,56 @@
+{
+  "parent": "improvedobsidianmod:obsiderite_ingot",
+  "criteria": {
+    "obsiderite_armor": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "improvedobsidianmod:obsiderite_helmet"
+            ]
+          },
+          {
+            "items": [
+              "improvedobsidianmod:obsiderite_chestplate"
+            ]
+          },
+          {
+            "items": [
+              "improvedobsidianmod:obsiderite_leggings"
+            ]
+          },
+          {
+            "items": [
+              "improvedobsidianmod:obsiderite_boots"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.improvedobsidianmod.obsiderite_armor.description"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "improvedobsidianmod:obsiderite_chestplate",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.improvedobsidianmod.obsiderite_armor.title"
+    }
+  },
+  "requirements": [
+    [
+      "obsiderite_armor"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  }
+}

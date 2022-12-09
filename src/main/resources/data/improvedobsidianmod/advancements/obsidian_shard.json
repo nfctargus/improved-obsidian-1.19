@@ -3,8 +3,12 @@
         "icon": {
             "item": "improvedobsidianmod:obsidian_shard"
         },
-        "title": "Boy, this is shard",
-        "description": "Unlocked the Obsidian Shard",
+        "title": {
+            "translate": "advancements.improvedobsidianmod.obsidian_shard.title"
+        },
+        "description": {
+            "translate": "advancements.improvedobsidianmod.obsidian_shard.description"
+        },
         "frame": "task",
         "show_toast": true
     },
