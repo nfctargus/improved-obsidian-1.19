@@ -1,8 +1,8 @@
 {
     "replace": false,
     "values": [
-        "improvedobsidianmod:obsidian_shard",
-        "improvedobsidianmod:refined_obsidian",
-        "improvedobsidianmod:obsidian_block"
+        "improvedobsidianmod:compressed_obsidian",
+        "improvedobsidianmod:obsidian_block",
+        "improvedobsidianmod:obsiderite_block"
     ]
 }

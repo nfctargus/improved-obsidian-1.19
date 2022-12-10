@@ -10,7 +10,7 @@
                     "children": [
                         {
                             "type": "minecraft:item",
-                            "name": "improvedobsidianmod:refined_obsidian",
+                            "name": "improvedobsidianmod:compressed_obsidian",
                             "conditions": [
                                 {
                                     "condition": "minecraft:match_tool",

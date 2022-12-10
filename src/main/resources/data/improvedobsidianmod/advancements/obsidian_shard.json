@@ -35,6 +35,7 @@
     "rewards": {
         "recipes": [
             "improvedobsidianmod:obsidian_dust",
+            "improvedobsidianmod:obsidian_lamp",
             "improvedobsidianmod:obsidian_end_table"
         ],
         "experience": 0.5

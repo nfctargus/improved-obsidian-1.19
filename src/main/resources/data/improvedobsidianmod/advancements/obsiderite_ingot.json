@@ -42,7 +42,8 @@
             "improvedobsidianmod:obsiderite_pickaxe_smithing",
             "improvedobsidianmod:obsiderite_shovel_smithing",
             "improvedobsidianmod:obsiderite_axe_smithing",
-            "improvedobsidianmod:obsiderite_hoe_smithing"
+            "improvedobsidianmod:obsiderite_hoe_smithing",
+            "improvedobsidianmod:obsiderite_block"
         ],
         "experience": 5
     }

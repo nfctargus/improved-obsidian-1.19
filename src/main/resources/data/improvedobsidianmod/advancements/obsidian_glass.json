@@ -1,0 +1,27 @@
+{
+    "parent": "minecraft:recipes/root",
+    "criteria": {
+        "has_obsidian_glass": {
+            "conditions": {
+                "items": [
+                    {
+                        "items": [
+                            "improvedobsidianmod:obsidian_glass"
+                        ]
+                    }
+                ]
+            },
+            "trigger": "minecraft:inventory_changed"
+        }
+    },
+    "requirements": [
+        [
+            "has_obsidian_glass"
+        ]
+    ],
+    "rewards": {
+        "recipes": [
+            "improvedobsidianmod:obsidian_table_lamp"
+        ]
+    }
+}

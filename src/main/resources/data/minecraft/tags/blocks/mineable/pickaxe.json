@@ -1,7 +1,7 @@
 {
     "replace": false,
     "values": [
-        "improvedobsidianmod:refined_obsidian",
+        "improvedobsidianmod:compressed_obsidian",
         "improvedobsidianmod:obsidian_stairs",
         "improvedobsidianmod:obsidian_slab",
         "improvedobsidianmod:obsiderite_chest",
@@ -9,6 +9,7 @@
         "improvedobsidianmod:obsidian_grinder",
         "improvedobsidianmod:obsidian_end_table",
         "improvedobsidianmod:obsidian_lamp",
-        "improvedobsidianmod:obsidian_block"
+        "improvedobsidianmod:obsidian_block",
+        "improvedobsidianmod:obsiderite_block"
     ]
 }

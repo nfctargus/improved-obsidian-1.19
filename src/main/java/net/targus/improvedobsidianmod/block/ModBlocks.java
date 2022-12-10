@@ -24,7 +24,9 @@ public class ModBlocks {
                     .strength(0.2F,600.0F).sounds(BlockSoundGroup.GLASS).nonOpaque()),ModItemGroup.OBSIDIAN);
     public static final Block OBSIDIAN_BLOCK = registerBlock("obsidian_block",
             new Block(FabricBlockSettings.of(Material.STONE).strength(5.0F,600.0F).requiresTool()), ModItemGroup.OBSIDIAN);
-    public static final Block REFINED_OBSIDIAN = registerBlock("refined_obsidian",
+    public static final Block OBSIDERITE_BLOCK = registerBlock("obsiderite_block",
+            new Block(FabricBlockSettings.of(Material.STONE).strength(5.0F,600.0F).requiresTool()), ModItemGroup.OBSIDIAN);
+    public static final Block COMPRESSED_OBSIDIAN = registerBlock("compressed_obsidian",
             new Block(FabricBlockSettings.of(Material.STONE).strength(5.0F,600.0F).requiresTool()), ModItemGroup.OBSIDIAN);
     public static final Block OBSIDIAN_TABLE_LAMP = registerBlock("obsidian_table_lamp",
             new Block(FabricBlockSettings.of(Material.STONE).strength(0.2F,600.0F).requiresTool().sounds(BlockSoundGroup.GLASS)

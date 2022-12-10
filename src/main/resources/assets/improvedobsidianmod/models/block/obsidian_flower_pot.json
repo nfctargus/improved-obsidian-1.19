@@ -70,5 +70,31 @@
                 "east": { "uv": [ 0, 0, 16, 16 ], "texture": "#plant" }
             }
         }
-    ]
+    ],
+    "display": {
+        "thirdperson_righthand": {
+            "translation": [0, 3.25, -1.25],
+            "scale": [0.5, 0.5, 0.5]
+        },
+        "thirdperson_lefthand": {
+            "translation": [0, 3.25, -1.25],
+            "scale": [0.5, 0.5, 0.5]
+        },
+        "firstperson_righthand": {
+            "translation": [4.25, 0, -3.5],
+            "scale": [0.5, 0.5, 0.5]
+        },
+        "firstperson_lefthand": {
+            "translation": [4.25, 0, -3.5],
+            "scale": [0.5, 0.5, 0.5]
+        },
+        "ground": {
+            "translation": [0, 1.25, 0],
+            "scale": [0.5, 0.5, 0.5]
+        },
+        "gui": {
+            "rotation": [30, 45, 0],
+            "translation": [0, 2.75, 0]
+        }
+    }
 }

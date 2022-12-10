@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "improvedobsidianmod:obsidian_block"
+  },
+  "result": "improvedobsidianmod:obsidian_wall"
+}
