@@ -1,4 +1,4 @@
-# improved-obsidian-1.19
+# improved-obsidian-1.19.2
 My first Minecraft mod! Obsidian is very under used so I am working on adding more decorative blocks and tools using obsidian.
 
 Obsidian Shards are central to progressing in this mod, which can be obtained by mining Obsidian.
