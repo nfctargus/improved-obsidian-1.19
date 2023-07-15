@@ -7,4 +7,4 @@ Obsiderite Dust can be smelted in the Obsiderite Infusing Station with lava or a
 You can craft your Obsiderite gear in the Smithing Table by combining a Netherite item with an Obsiderite Ingot.
 
 #CurseForge Link
-https://www.curseforge.com/minecraft/mc-mods/improved-obsidian(https://www.curseforge.com/minecraft/mc-mods/improved-obsidian)
+<a href="https://www.curseforge.com/minecraft/mc-mods/improved-obsidian" target="_blank">https://www.curseforge.com/minecraft/mc-mods/improved-obsidian</a>
