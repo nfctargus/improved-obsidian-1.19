@@ -6,5 +6,5 @@ Next, combine the Obsidian Shards with Netherite Ingots in the Obsidian Grinder 
 Obsiderite Dust can be smelted in the Obsiderite Infusing Station with lava or another energy source to get Obsiderite Ingots.
 You can craft your Obsiderite gear in the Smithing Table by combining a Netherite item with an Obsiderite Ingot.
 
-#CurseForge Link
+# CurseForge Link
 <a href="https://www.curseforge.com/minecraft/mc-mods/improved-obsidian" target="_blank">https://www.curseforge.com/minecraft/mc-mods/improved-obsidian</a>
